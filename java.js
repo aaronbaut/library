@@ -29,7 +29,8 @@ library.forEach(books => {
     console.log(books)
     const card = document.createElement('div')
     card.classList.add('card')
-    card.textContent = JSON.stringify(books)
+    card.textContent = `${books.title}`
+    card.textContent += `${books.author}`
     container.appendChild(card)
     }
 )
