@@ -34,3 +34,9 @@ library.forEach(books => {
     container.appendChild(card)
     }
 )
+
+const newBook = document.querySelector('.new')
+newBook.addEventListener('click', () => {
+    return console.log('hi')
+}
+)
