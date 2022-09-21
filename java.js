@@ -35,8 +35,12 @@ library.forEach(books => {
     }
 )
 
+const bookForm = document.querySelector('.addBook')
+
 const newBook = document.querySelector('.new')
 newBook.addEventListener('click', () => {
-    return console.log('hi')
+    console.log('hi')
+    bookForm.style.display='block';
+
 }
 )
