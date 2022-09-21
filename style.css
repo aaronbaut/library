@@ -5,3 +5,7 @@
     border: solid;
     word-break: break-all;
 }
+
+.addBook {
+    display: none;
+}
