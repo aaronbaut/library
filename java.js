@@ -25,15 +25,24 @@ addBookToLibrary(goggins);
 
 const container = document.querySelector('.container')
 
+let i=0;
 library.forEach(books => {
     console.log(books)
     const card = document.createElement('div')
+    const remove = document.createElement('button')
+    remove.classList.add('remove')
     card.classList.add('card')
+    card.setAttribute('dataset', i)
     card.textContent = `${books.title}`
     card.textContent += `${books.author}`
     container.appendChild(card)
+    remove.textContent = 'Remove'
+    container.appendChild(remove)
+    i++
     }
 )
+
+
 
 const bookForm = document.querySelector('.addBook')
 
