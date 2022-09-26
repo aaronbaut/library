@@ -1,5 +1,5 @@
 let library = [];
-
+// Object constructor
 function Book(title, author, pages, read) {
     this.title = title
     this.author = author
@@ -9,7 +9,7 @@ function Book(title, author, pages, read) {
         return `${this.title}` + ` is by ` + `${this.author},` + ` ${this.pages},` + `${this.read}`
     }
 }
-
+// Function to push books into library array
 function addBookToLibrary(bookObj) {
     return library.push(bookObj)
 }
@@ -18,13 +18,13 @@ const harry = new Book('Harry', 'JK', '123', 'no')
 const bear = new Book('aa', 'bb', 'cc', 'dd')
 const goggins = new Book('Hurt', 'Goggins', '200', 'no')
 
-
+// Placing books into array for testing
 addBookToLibrary(harry);
 addBookToLibrary(bear);
 addBookToLibrary(goggins);
 
 const container = document.querySelector('.container')
-
+// Create DOM for books and remove button to appear on page
 let i=0;
 library.forEach(books => {
     console.log(books)
@@ -43,9 +43,8 @@ library.forEach(books => {
 )
 
 
-
+//Display add book form when Add book button is selected
 const bookForm = document.querySelector('.addBook')
-
 const newBook = document.querySelector('.new')
 newBook.addEventListener('click', () => {
     console.log('hi')
@@ -63,11 +62,3 @@ removeBook.forEach((booky) => {
     })
 })
 
-// removeBook.addEventListener('click', (e) => {
-    // console.log(`${e.target.dataSetButton}`)
-    // for(j=0; j<`${e.target.dataSetButton}`; j++) {
-        // console.log(e.target.dataSetButton)
-        // console.log('hi')
-        // library.splice(e.target.dataSet,1)
-    // } 
-// })
