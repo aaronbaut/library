@@ -32,7 +32,7 @@ library.forEach(books => {
     const remove = document.createElement('button')
     remove.classList.add('remove')
     card.classList.add('card')
-    card.setAttribute('dataset', i)
+    remove.setAttribute('data-category', i)
     card.textContent = `${books.title}`
     card.textContent += `${books.author}`
     container.appendChild(card)
@@ -51,5 +51,23 @@ newBook.addEventListener('click', () => {
     console.log('hi')
     bookForm.style.display='block';
 
-}
+    }
 )
+
+const removeBook = document.querySelectorAll('[data-category]')
+// Try to target dataset value
+removeBook.forEach((booky) => {
+    booky.addEventListener('click', (e) => {
+    console.log(e.target.dataset.category)
+    library.splice(e.target.dataset.category, 1);
+    })
+})
+
+// removeBook.addEventListener('click', (e) => {
+    // console.log(`${e.target.dataSetButton}`)
+    // for(j=0; j<`${e.target.dataSetButton}`; j++) {
+        // console.log(e.target.dataSetButton)
+        // console.log('hi')
+        // library.splice(e.target.dataSet,1)
+    // } 
+// })
