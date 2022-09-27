@@ -29,18 +29,25 @@ let i=0;
 library.forEach(books => {
     console.log(books)
     const card = document.createElement('div')
-    const remove = document.createElement('button')
-    remove.classList.add('remove')
     card.classList.add('card')
-    remove.setAttribute('data-category', i)
+    card.setAttribute('data-category', i)
     card.textContent = `${books.title}`
     card.textContent += `${books.author}`
     container.appendChild(card)
-    remove.textContent = 'Remove'
-    container.appendChild(remove)
     i++
     }
 )
+// Create DOM for remove button within card
+let j=0;
+const card = document.querySelectorAll('.card')
+    card.forEach(remButton => {
+    const remove = document.createElement('button')
+    remove.classList.add('removeButton')
+    remove.setAttribute('data-category', j)
+    remove.textContent ='Remove'
+    remButton.appendChild(remove)
+    j++;
+})
 
 
 //Display add book form when Add book button is selected
@@ -54,7 +61,7 @@ newBook.addEventListener('click', () => {
 )
 
 const removeBook = document.querySelectorAll('[data-category]')
-// Try to target dataset value
+// Try to target dataset value and remove books from array
 removeBook.forEach((booky) => {
     booky.addEventListener('click', (e) => {
     console.log(e.target.dataset.category)
