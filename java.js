@@ -24,7 +24,7 @@ addBookToLibrary(bear);
 addBookToLibrary(goggins);
 
 const container = document.querySelector('.container')
-// Create DOM for books and remove button to appear on page
+// Create DOM for books
 let i=0;
 library.forEach(books => {
     console.log(books)
@@ -38,15 +38,13 @@ library.forEach(books => {
     }
 )
 // Create DOM for remove button within card
-let j=0;
 const card = document.querySelectorAll('.card')
     card.forEach(remButton => {
     const remove = document.createElement('button')
     remove.classList.add('removeButton')
-    remove.setAttribute('data-category', j)
+    remove.setAttribute
     remove.textContent ='Remove'
     remButton.appendChild(remove)
-    j++;
 })
 
 
@@ -64,8 +62,8 @@ const removeBook = document.querySelectorAll('[data-category]')
 // Try to target dataset value and remove books from array
 removeBook.forEach((booky) => {
     booky.addEventListener('click', (e) => {
-    console.log(e.target.dataset.category)
     library.splice(e.target.dataset.category, 1);
+    booky.remove();
     })
 })
 
