@@ -31,8 +31,20 @@ library.forEach(books => {
     const card = document.createElement('div')
     card.classList.add('card')
     card.setAttribute('data-category', i)
-    card.textContent = `${books.title}`
-    card.textContent += `${books.author}`
+    const table = document.createElement('table')
+    const tRow = document.createElement('tr') 
+    const title = document.createElement('th')
+    const author = document.createElement('th')
+    const pages = document.createElement('th')
+    const read = document.createElement('th')
+    const tRow2 = document.createElement('tr')
+    const bTitle = document.createElement('td')
+    const bAuthor = document.createElement('td')
+    const bPages = document.createElement('td')
+    const bRead = document.createElement('td')
+    title.textContent = this.title;
+    card.appendChild(title)
+
     container.appendChild(card)
     i++
     }
