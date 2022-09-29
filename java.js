@@ -14,9 +14,9 @@ function addBookToLibrary(bookObj) {
     return library.push(bookObj)
 }
 
-const harry = new Book('Harry', 'JK', '123', 'no')
-const bear = new Book('aa', 'bb', 'cc', 'dd')
-const goggins = new Book('Hurt', 'Goggins', '200', 'no')
+const harry = new Book('Harry Potter', 'JK Rowling', '1234', 'no')
+const bear = new Book('City in the Sun', 'Gabriel Torres', '231', 'yes')
+const goggins = new Book('Can\'t Hurt Me', 'David Goggins', '200', 'no')
 
 // Placing books into array for testing
 addBookToLibrary(harry);
@@ -42,9 +42,24 @@ library.forEach(books => {
     const bAuthor = document.createElement('td')
     const bPages = document.createElement('td')
     const bRead = document.createElement('td')
-    title.textContent = this.title;
+    title.textContent = 'Book'
+    author.textContent = 'Author'
+    pages.textContent = 'Pages'
+    read.textContent = 'Read Y/N'
     card.appendChild(title)
-
+    card.appendChild(author)
+    card.appendChild(pages)
+    card.appendChild(read)
+    card.appendChild(tRow)
+    bTitle.textContent = books.title
+    bAuthor.textContent = books.author
+    bPages.textContent = books.pages
+    bRead.textContent = books.read
+    card.appendChild(bTitle)
+    card.appendChild(bAuthor)
+    card.appendChild(bPages)
+    card.appendChild(bRead)
+    card.appendChild(tRow2)
     container.appendChild(card)
     i++
     }
