@@ -1,9 +1,11 @@
 .card {
-    display:grid;
-    height: 100px;
-    width: 100px;
     border: solid;
-    word-break: break-all;
+}
+
+table, td, th {
+    border: 1px solid black;
+    padding: 5px;
+
 }
 
 .addBook {
