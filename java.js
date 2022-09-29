@@ -86,11 +86,14 @@ newBook.addEventListener('click', () => {
 )
 
 const removeBook = document.querySelectorAll('[data-category]')
-// Try to target dataset value and remove books from array
+// Target Remove button and delete book if remove button is pressed
 removeBook.forEach((booky) => {
+    const buttonRem = document.querySelector('.removeButton')
     booky.addEventListener('click', (e) => {
-    library.splice(e.target.dataset.category, 1);
-    booky.remove();
+    if (e.target.innerText ==='Remove') {
+        library.splice(e.target.dataset.category, 1);
+        booky.remove();
+        }
     })
 })
 
