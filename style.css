@@ -11,3 +11,7 @@ table, td, th {
 .addBook {
     display: none;
 }
+
+.togButton::after {
+    content: url(book-open-blank-variant.png);
+}
