@@ -1,5 +1,14 @@
+body {
+    background-color: grey;
+}
+.container {
+    display:grid;
+    background-color: #0ea5e9;
+}
 .card {
     border: solid;
+    background-color: #e0f2fe;
+
 }
 
 table, td, th {
@@ -15,3 +24,4 @@ table, td, th {
 .togButton::after {
     content: url(book-open-blank-variant.png);
 }
+
