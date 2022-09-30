@@ -2,7 +2,8 @@ body {
     background-color: grey;
 }
 .container {
-    display:grid;
+    display:flex;
+    justify-content: space-between;
     background-color: #0ea5e9;
 }
 .card {
