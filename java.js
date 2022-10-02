@@ -42,6 +42,7 @@ library.forEach(books => {
     const bAuthor = document.createElement('td')
     const bPages = document.createElement('td')
     const bRead = document.createElement('td')
+    bRead.classList.add('bRead')
     title.textContent = 'Book'
     author.textContent = 'Author'
     pages.textContent = 'Pages'
@@ -96,4 +97,29 @@ removeBook.forEach((booky) => {
         }
     })
 })
+
+
+
+// Add toggle button to togButton class
+const bRead = document.querySelectorAll('.bRead')
+bRead.forEach(toggle => {
+    const toggleRead = document.createElement('button')
+    toggleRead.classList.add('toggle')
+    toggleRead.textContent = "Toggle"
+    toggle.appendChild(toggleRead)
+})
+// Target library array and toggleButton and change book.read status when toggled
+// const toggleButton = document.querySelectorAll('.toggle')
+// toggleButton.forEach(tog => {
+//      tog.addEventListener('click', (e) => {
+//          if (library[e.target.dataset.category].read === 'no') {
+//              library[e.target.dataset.category].read = 'yes'
+//              return tog.innerText = 'yes'
+//          } else if (library[e.target.dataset.category].read === 'yes') {
+//              library[e.target.dataset.category].read = 'no'
+//              return tog.innerText ='no'
+//      }
+//  })
+
+// })
 
