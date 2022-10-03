@@ -106,18 +106,7 @@ removeBook.forEach((booky) => {
 
 
 
-// // Add toggle button to bRead class
 // const bRead = document.querySelectorAll('.bRead')
-// let j=0;
-// bRead.forEach(toggle => {
-//     const toggleRead = document.createElement('button')
-//     toggleRead.setAttribute('data-toggle', j)
-//     toggleRead.classList.add('toggle')
-//     toggleRead.textContent = "Toggle"
-//     toggle.appendChild(toggleRead)
-//     j++
-// })
-
 //create separate function for changing bRead text
 
 // function change(e) {
