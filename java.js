@@ -28,38 +28,44 @@ const container = document.querySelector('.container')
 let i=0;
 library.forEach(books => {
     console.log(books)
-    const card = document.createElement('div')
+    const card = document.createElement('table')
     card.classList.add('card')
     card.setAttribute('data-category', i)
-    const table = document.createElement('table')
     const tRow = document.createElement('tr') 
     const title = document.createElement('th')
     const author = document.createElement('th')
     const pages = document.createElement('th')
     const read = document.createElement('th')
+    const switchRead = document.createElement('th')
     const tRow2 = document.createElement('tr')
     const bTitle = document.createElement('td')
     const bAuthor = document.createElement('td')
     const bPages = document.createElement('td')
     const bRead = document.createElement('td')
+    const toggle = document.createElement('td')
     bRead.classList.add('bRead')
     title.textContent = 'Book'
     author.textContent = 'Author'
     pages.textContent = 'Pages'
     read.textContent = 'Read Y/N'
+    switchRead.textContent = ' '
     card.appendChild(title)
     card.appendChild(author)
     card.appendChild(pages)
     card.appendChild(read)
+    card.appendChild(switchRead)
     card.appendChild(tRow)
     bTitle.textContent = books.title
     bAuthor.textContent = books.author
     bPages.textContent = books.pages
     bRead.textContent = books.read
+    const togButton = document.createElement('button')
     card.appendChild(bTitle)
     card.appendChild(bAuthor)
     card.appendChild(bPages)
     card.appendChild(bRead)
+    card.appendChild(toggle)
+    toggle.appendChild(togButton)
     card.appendChild(tRow2)
     container.appendChild(card)
     i++
@@ -100,26 +106,38 @@ removeBook.forEach((booky) => {
 
 
 
-// Add toggle button to togButton class
-const bRead = document.querySelectorAll('.bRead')
-bRead.forEach(toggle => {
-    const toggleRead = document.createElement('button')
-    toggleRead.classList.add('toggle')
-    toggleRead.textContent = "Toggle"
-    toggle.appendChild(toggleRead)
-})
-// Target library array and toggleButton and change book.read status when toggled
+// // Add toggle button to bRead class
+// const bRead = document.querySelectorAll('.bRead')
+// let j=0;
+// bRead.forEach(toggle => {
+//     const toggleRead = document.createElement('button')
+//     toggleRead.setAttribute('data-toggle', j)
+//     toggleRead.classList.add('toggle')
+//     toggleRead.textContent = "Toggle"
+//     toggle.appendChild(toggleRead)
+//     j++
+// })
+
+//create separate function for changing bRead text
+
+// function change(e) {
+//     bRead.forEach(text => {
+//         if (library[e.target.dataset.toggle].read === 'no') {
+//             library[e.target.dataset.toggle].read = 'yes'
+//             return text.textContent = 'yes'
+//         } else if (library[e.target.dataset.toggle].read === 'yes') {
+//             library[e.target.dataset.toggle].read = 'no'
+//             return text.textContent ='no'
+//         }
+//     })
+// }
+// // Target library array and toggleButton and change book.read status when toggled
 // const toggleButton = document.querySelectorAll('.toggle')
 // toggleButton.forEach(tog => {
 //      tog.addEventListener('click', (e) => {
-//          if (library[e.target.dataset.category].read === 'no') {
-//              library[e.target.dataset.category].read = 'yes'
-//              return tog.innerText = 'yes'
-//          } else if (library[e.target.dataset.category].read === 'yes') {
-//              library[e.target.dataset.category].read = 'no'
-//              return tog.innerText ='no'
-//      }
+//         change(e);
 //  })
-
 // })
+
+
 
