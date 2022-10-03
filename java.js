@@ -60,6 +60,8 @@ library.forEach(books => {
     bPages.textContent = books.pages
     bRead.textContent = books.read
     const togButton = document.createElement('button')
+    togButton.textContent = 'toggle'
+    togButton.classList.add('toggle')
     card.appendChild(bTitle)
     card.appendChild(bAuthor)
     card.appendChild(bPages)
