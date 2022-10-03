@@ -62,6 +62,7 @@ library.forEach(books => {
     const togButton = document.createElement('button')
     togButton.textContent = 'toggle'
     togButton.classList.add('toggle')
+    togButton.setAttribute('data-toggle', i)
     card.appendChild(bTitle)
     card.appendChild(bAuthor)
     card.appendChild(bPages)
@@ -108,27 +109,27 @@ removeBook.forEach((booky) => {
 
 
 
-// const bRead = document.querySelectorAll('.bRead')
-//create separate function for changing bRead text
+const bRead = document.querySelectorAll('.bRead')
+// create separate function for changing bRead text
 
-// function change(e) {
-//     bRead.forEach(text => {
-//         if (library[e.target.dataset.toggle].read === 'no') {
-//             library[e.target.dataset.toggle].read = 'yes'
-//             return text.textContent = 'yes'
-//         } else if (library[e.target.dataset.toggle].read === 'yes') {
-//             library[e.target.dataset.toggle].read = 'no'
-//             return text.textContent ='no'
-//         }
-//     })
-// }
-// // Target library array and toggleButton and change book.read status when toggled
-// const toggleButton = document.querySelectorAll('.toggle')
-// toggleButton.forEach(tog => {
-//      tog.addEventListener('click', (e) => {
-//         change(e);
-//  })
-// })
+function change(e) {
+    bRead.forEach(text => {
+        if (library[e.target.dataset.toggle].read === 'no') {
+            library[e.target.dataset.toggle].read = 'yes'
+            return text.textContent = 'yes'
+        } else if (library[e.target.dataset.toggle].read === 'yes') {
+            library[e.target.dataset.toggle].read = 'no'
+            return text.textContent ='no'
+        }
+    })
+}
+// Target library array and toggleButton and change book.read status when toggled
+const toggleButton = document.querySelectorAll('.toggle')
+toggleButton.forEach(tog => {
+     tog.addEventListener('click', (e) => {
+        change(e);
+ })
+})
 
 
 
