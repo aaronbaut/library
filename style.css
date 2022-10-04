@@ -26,3 +26,6 @@ table, td, th {
     content: url(book-open-blank-variant.png);
 }
 
+.header {
+    font-size: 3rem;
+}
