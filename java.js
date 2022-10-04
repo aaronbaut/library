@@ -44,6 +44,7 @@ library.forEach(books => {
     const bRead = document.createElement('td')
     const toggle = document.createElement('td')
     bRead.classList.add('bRead')
+    bRead.setAttribute('data-read', i)
     title.textContent = 'Book'
     author.textContent = 'Author'
     pages.textContent = 'Pages'
@@ -114,10 +115,10 @@ const bRead = document.querySelectorAll('.bRead')
 
 function change(e) {
     bRead.forEach(text => {
-        if (library[e.target.dataset.toggle].read === 'no') {
+        if (e.target.dataset.toggle == text.dataset.read && library[e.target.dataset.toggle].read === 'no') {
             library[e.target.dataset.toggle].read = 'yes'
             return text.textContent = 'yes'
-        } else if (library[e.target.dataset.toggle].read === 'yes') {
+        } else if (e.target.dataset.toggle == text.dataset.read && library[e.target.dataset.toggle].read === 'yes') {
             library[e.target.dataset.toggle].read = 'no'
             return text.textContent ='no'
         }
