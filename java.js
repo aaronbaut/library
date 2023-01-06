@@ -1,11 +1,23 @@
 let library = [];
 // Object constructor
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.info = () => {
+// function Book(title, author, pages, read) {
+//     this.title = title
+//     this.author = author
+//     this.pages = pages
+//     this.read = read
+//     this.info = () => {
+//         return `${this.title}` + ` is by ` + `${this.author},` + ` ${this.pages},` + `${this.read}`
+//     }
+// }
+//Refactor constructors into Class
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
+    info() {
         return `${this.title}` + ` is by ` + `${this.author},` + ` ${this.pages},` + `${this.read}`
     }
 }
@@ -13,7 +25,7 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(bookObj) {
     return library.push(bookObj)
 }
-
+//Book placeholders
 const harry = new Book('Harry Potter', 'JK Rowling', '1234', 'no')
 const bear = new Book('City in the Sun', 'Gabriel Torres', '231', 'yes')
 const goggins = new Book('Can\'t Hurt Me', 'David Goggins', '200', 'no')
